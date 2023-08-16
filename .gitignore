@@ -4,3 +4,4 @@ Data/Spotify/.cache
 .DS_Store
 Data/Spotify/.ipynb_checkpoints/spotify-api-checkpoint.ipynb
 Data/ATUS/.ipynb_checkpoints/atus-checkpoint.ipynb
+Data/.ipynb_checkpoints/google-trends-checkpoint.ipynb
