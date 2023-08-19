@@ -1,8 +1,8 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{mystyle} 
-\usepackage{mycommands}
+\usepackage{tex/mystyle} 
+\usepackage{tex/mycommands}
 \usepackage{fontawesome}
 
 \author{Alexander Clark\\ \scalebox{0.7}{Columbia University - Stats 1101}} 
@@ -269,6 +269,14 @@ plt.savefig("first_histogram.pdf")
 plt.show()    
 \end{lstlisting}
 
+
+\begin{figure}
+    \centering
+    \includegraphics[width = .59\textwidth]{figures/first_histogram.pdf}
+    \caption{Our first histogram.}
+    \label{fig:hist}
+\end{figure}
+
 We can simulate Bernoulli draws and run a hypothesis test. Python has a small selection of mathematical functions available apart from any library. Previously, we used \code{abs()}. Below, we use \code{sum()} and then \code{len()} which counts the number of elements in  an array.
 
 \begin{lstlisting}
@@ -298,15 +306,6 @@ for sim in range(N):
 
 print(k/N)
 \end{lstlisting}
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width = .59\textwidth]{images/first_histogram.pdf}
-    \caption{Our first histogram.}
-    \label{fig:hist}
-\end{figure}
-
 
 
 
