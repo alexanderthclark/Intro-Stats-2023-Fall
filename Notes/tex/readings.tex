@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mystyle} 
+\usepackage{mycommands}
+\usepackage{tcolorbox}
+\usepackage{pgf,tikz}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{parskip}
+\usepackage{scrextend} % for indenting
+%\usepackage{bibentry}
+%\usepackage{listings}
+
+\usetikzlibrary{automata, positioning}
+
+\title{Readings \\ \scalebox{0.6}{Stats 1101 \semester} } %\\
+
+%\vspace{1cm}\\
+%{\includegraphics[width = 5cm]{town_sign.jpg}}
+
+
+% Update these
+\date{}
+%\author{Alexander Clark\\ %\footnote{If you find any stats or grammatical mistakes in this, please email me with an explanation and claim your reward of free LinkedIn premium.} \\
+%\scalebox{0.6}{Columbia University}}
+
+\begin{document}
+
+\maketitle
+
+
+The primary text is \cite{freedman2007statistics}. What makes a text primary? I won't contradict it and it is a source of homework problems. It is good to stay close to the primary text because intro conventions are not always consistent. Some authors will use convention $X$ for the whiskers in a box-and-whisker plot and some will use convention $Y$. Some apply the term selection bias more broadly than others. Some will pool a standard deviation and some will not. These details are not always apparent in an intro text. 
+
+Below, \scalebox{0.6}{\faToggleOn} indicates a required reading and \scalebox{0.6}{\faToggleOff} indicates an optional reading. I briefly explain the significance of some readings underneath their citation. The semester includes 26 class sessions, meaning some sections are covered over several lectures. The midterm is after the probability lectures.
+
+\section{Intro}
+
+\required[Chapter~1]{hand2008statistics} 
+\indentblock{What is data? What is a statistic? Statistics is useful despite what the haters say. Statistics can be misused.}
+
+
+\section{Types of Data}
+
+\required[Chapter~1.2]{modernstats2021} 
+\indentblock{This establishes vocabulary for tabular data and variables.}
+
+
+\section{Experiments and Observational Studies}
+
+\required[Chapters~1-2]{freedman2007statistics}
+
+\section{Natural Experiments}
+
+\required[Chapter~6]{rosenbaum2017observation}
+\indentblock{A perfect natural experiment involves ``ignorable treatment assignment,'' meaning the process determining treatment and control is unrelated to the outcomes of interest and as good as random.}
+
+\section{Summarizing Data}
+
+\required[Chapters~3-4]{freedman2007statistics}\\
+\required[Chapter~2]{diez2019openintro}
+\indentblock{This fills out some of the gaps in \cite{freedman2007statistics}.}
+
+\optional[Chapter~9]{van2011statistical}
+\indentblock{This gives a few rules to help you be more thoughtful in using tables and graphs.}
+
+\optional{schwabish2021practice}
+\indentblock{This is a brief starting point for anyone interested in the craft of data storytelling, covering things like choosing color-blind-friendly color palettes and reducing clutter.}
+
+\optional{schwabish2023data}
+\indentblock{This reference will help you make graphs, even fancy ones, in Excel.}
+
+%\item[\faToggleOn] 
+%\cite{hand2008chapter1}
+%\cite[Chapter~1]{hand2008statistics}
+
+\section{Normal Distribution}
+
+\required[Chapter~5]{freedman2007statistics}
+
+\section{Correlation}
+
+\required[Chapters~8-9]{freedman2007statistics}
+
+\section{Simple Linear Regression}
+
+\required[Chapters~10-12]{freedman2007statistics}
+
+\section{Probability}\label{sec:prob}
+
+\required[Chapters~13-18]{freedman2007statistics}\\
+\required[Chapter~3]{diez2019openintro}
+\indentblock{This will supplement for tree diagrams, Bayes' theorem, and some formalities.}
+
+\section{Sampling}
+
+\required[Chapters~19-20]{freedman2007statistics}\\
+
+\section{Confidence Intervals}
+
+\required[Chapters~21,23]{freedman2007statistics}
+
+\section{One-Sample Hypothesis Testing}
+
+\required[Chapter 26]{freedman2007statistics}
+
+\section{Two-Sample Hypothesis Testing}
+
+\required[Chapter 27]{freedman2007statistics}
+
+\section{Computer Skills}
+
+\faToggleOff $\;$ \link{https://github.com/alexanderthclark/Intro-Stats-2023-Fall/blob/main/Notes/75MinutesOfPython.pdf}{My notes}
+\indentblock{These notes will prepare you for using Python in Google Colab.}
+
+\section{$\chi^2$ Hypothesis Testing for Categorical Data}
+
+\required[Chapter 28]{freedman2007statistics}
+
+\section{A Closer Look at Significance}
+
+\required[Chapter 29]{freedman2007statistics}\\
+\faToggleOn $\:$ TBD
+\indentblock{Additional reading will cover Type I error, Type II error, statistical power, and the false discovery rate.}
+
+\section{Simple Linear Regression}
+\required[Chapter~8]{diez2019openintro}
+
+
+\section{Multiple Linear Regression}
+\required[Chapter~9]{diez2019openintro}
+
+
+
+\printbibliography[title={References}]
+
+
+
+\end{document}
