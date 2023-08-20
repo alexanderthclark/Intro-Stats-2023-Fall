@@ -1,0 +1,1 @@
+df['total_expenditure'] = df.frosty_expenditure + df.mcflurry_expenditure

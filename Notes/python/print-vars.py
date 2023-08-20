@@ -1,0 +1,6 @@
+print(greeting)
+print("greeting")
+print("Hello, World!")
+print(91)
+print(my_favorite_number)
+print("my_favorite_number")

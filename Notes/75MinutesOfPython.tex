@@ -54,61 +54,36 @@ A Python variable holds a value. It can be a string, a number, or perhaps a more
 
 \smallskip
 
-\begin{lstlisting}
-greeting = "Hello, World!"
-my_favorite_number = 91
-\end{lstlisting}
+\pyfile{vars.py}
 
 \smallskip
 \noindent Now compare the output you get from the following.
-\begin{lstlisting}
-print(greeting)
-print("greeting")
-print("Hello, World!")
-print(91)
-print(my_favorite_number)
-print("my_favorite_number")
-\end{lstlisting}
+\pyfile{print-vars.py}
 
-\noindent Note that while $x = x+1$ is nonsense as a mathematical equation, in Python \code{x = x+1} simply adds one to the value of \code{x}. What's the value of \code{x} at the end of the following program? 
 
-\begin{lstlisting}
-x = 0
-x = x + 1 
-x = x + 1
-x += 1 # syntatic sugar
-print(x)
-\end{lstlisting}
+\noindent Note that while $x = x+1$ is nonsense as a mathematical equation, in Python \code{x = x+1} simply adds one to the value of \code{x}. What's the value of \code{x} at the end of the following program?\footnote{\rotatebox{180}{Three.}}
+
+\pyfile{reassignment.py}
 
 \subsection{Comments}
 Commenting your code is helpful if you care about your colleagues or your future self. Comments should add clarity to the intention and workings of code. A comment is a piece of code that isn't actually executed---it's a comment left for the reader or the person who inherits and modifies your code.
 Everything after a \lstinline[language = Python]{#} will be ignored by Python.
 
-\begin{lstlisting}[language = Python]
-# This will print a greeting.
-print("Hello, World!") \end{lstlisting}
+\pyfile{comment.py}
 
 \smallskip
  \noindent You might also use end-line comments like the following
 
-\begin{lstlisting}[language = Python]
-print("Hello, World!") # Prints a greeting \end{lstlisting}
+\pyfile{inline.py}
+
 
 \smallskip
 
 \noindent Perfect comment technique does not correct for bad code though. Compare the following blocks of code. 
 
-\begin{lstlisting}
-x = 90 # Wins
-y = 10 # Losses
-a = 100 * x/(y+x) # Winning Percentage
-\end{lstlisting}
+\pyfile{compensation.py}
 
-\begin{lstlisting}
-wins = 90
-lossses = 10
-winning_percentage = 100 * wins / (losses + wins)
-\end{lstlisting}
+\pyfile{good-names.py}
 
 The first block is commented and the second is not. Still, the second code block is better because the variable names are chosen so you don't \emph{need} comments. Good naming becomes even more important as the program becomes longer and variables are used over and over. 
 
@@ -135,43 +110,21 @@ Operator & Description \\
 
 We can use parenthesis for readability and to order operations in the usual way.
 
-\begin{lstlisting}
-a = 1 - 1 * 0
-b = (1 - 1) * 0
-print(a, b)
-\end{lstlisting}
-
+\pyfile{parens.py}
 
 For our first substantive program, let's calculate the test statistic for $\hat{p} = 0.34$ with $n=116$ if we assume a null hypothesis of $p = \frac{1}{3}$. We will obtain \code{z = 0.15231546211727914}.
 
-
-\begin{lstlisting}
-p_hat = 0.34
-p = 1/3
-n = 116
-sd = (p*(1-p) / n)**0.5 # st dev from sampling distribution
-z = (p_hat - p)/sd # test stat
-\end{lstlisting}
+\pyfile{z-stat.py}
 
 \subsection{Truth and Decision Structures}
 
 You'll notice the test statistic we just calculated is small. For a 95\% confidence level and a two-sided test, we would fail to reject the null hypothesis because $\vert z \vert < 1.96$. It would be nice if Python could make that call without us even having to look at the statistic. We can do that with if statements. If statements are based on truth statements, or boolean expressions.
 
-\begin{lstlisting}
-if True:
-    print(1)
-else:
-    print(0)
-\end{lstlisting}
+\pyfile{if-true.py}
 
-\begin{lstlisting}
-if False:
-    print(4)
-else:
-    print(5)
-\end{lstlisting}
+\pyfile{if-false.py}
 
-We can't work directly with \code{True} and \code{False} in practice. We have to make use of comparison operators. 
+We don't work directly with \code{True} and \code{False} in practice. We have to make use of comparison operators. 
 
 \begin{center}
 {\setlength{\tabcolsep}{2em}
@@ -190,49 +143,24 @@ Operator & Description \\
 
 \noindent Observe.
 
-\begin{lstlisting}
-if 1 == abs(-1):
-    print("Equality in absolute value")
-else:
-    print("Inequality")
-\end{lstlisting}
+\pyfile{if-calc.py}
 
 \noindent Using the \code{abs()} function above to take an absolute value, Python knows $1 = \vert -1 \vert$ and executes only the first print statement. Finally, let's have Python make the call on our hypothesis test. 
 
-\begin{lstlisting}
-if abs(z) < 1.96:
-    print("Fail to reject.")
-else:
-    print("Reject.")
-\end{lstlisting}
+\pyfile{reject-rule.py}
 
 \section{Libraries for Statistical Functions and Graphs}
 We've hit a ceiling in Python's usefulness. You, the coder, supplied the critical value 1.96 in the previous program and we couldn't calculate a P-value. To go further, we have to import additional libraries that contain the stuff we want to use. SciPy, and specifically the stats module, will replace a $z$-table and then some. Below, we import the SciPy stats module and use it to calculate $P(Z < 1.96)$, using the standard normal CDF.
 
-\begin{lstlisting}
-import scipy.stats as stats
-
-z_table_value = stats.norm.cdf(1.96)
-print(z_table_value)
-\end{lstlisting}
+\pyfile{scipy-norm.py}
 
 \noindent We can go in the opposite direction with \code{stats.norm.ppf}. 
 
-\begin{lstlisting}
-# Two-sided Critical Value
-confidence_level = 0.9
-alpha = 1 - confidence_level
-critical_value = stats.norm.ppf(1 - alpha/2)
-print(critical_value)
-\end{lstlisting}
+\pyfile{crit-val.py}
 
 Occasionally, it's useful to simulate data. SciPy again suits this purpose. For this call, we make use of keyword parameter \code{size}, specifying that we want 75 iid draws from the standard normal distribution. 
 
-\begin{lstlisting}
-# Normal random variables
-random_draws = stats.norm.rvs(size = 75)
-random_draws
-\end{lstlisting}
+\pyfile{rand-draws.py}
 
 \noindent If you display \code{random_draws}, you'll see we have an array---a new data type.
 
@@ -261,13 +189,7 @@ random_draws
 
 \noindent We'll sneak in a histogram. The standard data visualization library for Python is matplotlib. We use the pyplot module for a bare-bones histogram in Figure \ref{fig:hist}.
 
-\begin{lstlisting}
-import matplotlib.pyplot as plt
-plt.hist(random_draws)
-plt.title("Random Draws from the Standard Normal Distribution")
-plt.savefig("first_histogram.pdf")
-plt.show()    
-\end{lstlisting}
+\pyfile{mpl-hist.py}
 
 
 \begin{figure}
@@ -279,33 +201,11 @@ plt.show()
 
 We can simulate Bernoulli draws and run a hypothesis test. Python has a small selection of mathematical functions available apart from any library. Previously, we used \code{abs()}. Below, we use \code{sum()} and then \code{len()} which counts the number of elements in  an array.
 
-\begin{lstlisting}
-data = stats.bernoulli.rvs(p = .52, size = 30)
-p = 0.5 # null hypothesis
-p_hat = sum(data) / len(data)
-sd = (p*(1-p) / n)**0.5 # st dev from sampling distribution
-z = (p_hat - p)/sd # test stat
-\end{lstlisting}
+\pyfile{bernoulli.py}
 
-\noindent We can run many with the help of a special repetition structure called a \emph{for loop}. The code below simulates 30 flips of a fair coin 10,000 times. \code{k} records how often our test statistic, under a null of $p= 0.5$, would lead us to incorrectly reject the null hypothesis using $\alpha = 0.05$ and a two-sided alternative. What value do you expect for \code{k/N}? 
+\noindent We can run many with the help of a special repetition structure called a \emph{for loop}. The code below simulates 30 flips of a fair coin 10,000 times. \code{k} records how often our test statistic, under a null of $p= 0.5$, would lead us to incorrectly reject the null hypothesis using $\alpha = 0.05$ and a two-sided alternative. What value do you expect for \code{k/N}?\footnote{\rotatebox{180}{\code{k/N} should be close to 0.05, using a Normal approximation. Large simulations will show this approximation to be inexact.}}
 
-\begin{lstlisting}
-N = 10_000
-k = 0
-
-n = 30
-p = 0.5 # null hypothesis
-sd = (p*(1-p) / n)**0.5 # st dev from sampling distribution
-
-for sim in range(N):
-    data = stats.bernoulli.rvs(p = .5, size = n)
-    p_hat = sum(data) / len(data)
-    z = (p_hat - p)/sd
-    if abs(z) > 1.96:
-        k += 1
-
-print(k/N)
-\end{lstlisting}
+\pyfile{simulation.py}
 
 
 
@@ -313,35 +213,15 @@ print(k/N)
 
 The main library for data wrangling and anything tabular (like a spreadsheet) is pandas. Pandas is famous---it's no wonder the bear is named after this library. Primarily, we will read csv and xlsx files into \emph{DataFrames}. DataFrames can also be constructed by hand like in the program below.
 
-\begin{lstlisting}[language = Python]
-import pandas as pd
-
-atus_df = pd.read_csv("ATUS_activity_2019.csv")
-other_df = pd.read_excel("helper.xlsx")
-
-data = {'day' : ['Monday', 'Tuesday'], 
-        'frosty_expenditure' : [0,2],
-        'mcflurry_expenditure': [3,0]}
-df = pd.DataFrame(data)
-\end{lstlisting}
+\pyfile{pandas-df.py}
 
 Individual columns can be accessed as a \emph{Series} with \code{df['frosty_expenditure']} or \code{df.frosty_expenditure}.\footnote{This pattern will not work if there is a space in the column name or if the column doesn't adhere to other naming requirements.} We can then create new columns based on existing columns. 
 
-\begin{lstlisting}
-df['total_expenditure'] = df.frosty_expenditure + df.mcflurry_expenditure
-\end{lstlisting}
+\pyfile{new-column.py}
 
 \noindent DataFrames and Series also have special \emph{methods} available. 
 
-\begin{lstlisting}
-df = pd.read_csv('file.csv')
-
-mean = df.response_variable.mean()
-grouped_means = df.groupby("assignment").response_variable.mean()
-
-var = df.var() # variance of each column
-corr = df.corr() # correlation table
-\end{lstlisting}
+\pyfile{pd-methods.py}
 
 \section{Further Resources and Caution}
 
@@ -353,46 +233,8 @@ I got my start with \link{https://www.datacamp.com/}{DataCamp} courses. DataCamp
 
 Recall when we calculated sample variance as $\sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}$. We used $n-1$ instead of $n$ in the denominator as correction for unbiasedness. Not all Python libraries do this by default! NumPy is one such library that does not use the correction by default. The lesson here is that, for this class, do your research if you are using other libraries and functions. There are many ways to do what sounds like the same thing in statistics and some disjointedness across all of the Python libraries. 
 
-Here's another example where default behavior in the StatsModels library does not match our intro conventions. For now, our calculations are simple enough that I don't recommend finding random libraries and functions to shorten your code. 
+Below is another example where default behavior in the StatsModels library does not match our intro conventions. For now, our calculations are simple enough that I don't recommend finding random libraries and functions to shorten your code. 
 
-\begin{lstlisting}
-import statsmodels.stats as sm
-
-# Hypothesis testing with null of p = 0.6
-
-# Wrong/Different
-z1, pval1 = sm.proportion.proportions_ztest(10, 20, value = .6)
-
-# Correct/Matches Textbook
-z2, pval2 = sm.proportion.proportions_ztest(10, 20, value = .6, prop_var = .6)
-
-# By hand
-p_hat = 0.5
-p = .6
-n = 20
-sd = (p*(1-p) / (n))**0.5 # st dev from sampling distribution
-z3 = (p_hat - p)/sd # test stat
-\end{lstlisting}
-
-\noindent The following code does the same thing, but might fix errors when importing the function from StatsModels. 
-
-\begin{lstlisting}
-from statsmodels.stats.proportion import proportions_ztest
-
-# Hypothesis testing with null of p = 0.6
-
-# Wrong/Different
-z1, pval1 = proportions_ztest(10, 20, value = .6)
-
-# Correct/Matches Textbook
-z2, pval2 = proportions_ztest(10, 20, value = .6, prop_var = .6)
-
-# By hand
-p_hat = 0.5
-p = .6
-n = 20
-sd = (p*(1-p) / (n))**0.5 # st dev from sampling distribution
-z3 = (p_hat - p)/sd # test stat
-\end{lstlisting}
+\pyfile{prop-ztest.py}
 
 \end{document}
