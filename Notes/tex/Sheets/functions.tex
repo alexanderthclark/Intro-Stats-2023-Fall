@@ -1,0 +1,32 @@
+Google Sheets offers hundreds of functions across several categories. We are especially interested in the statistical, math, and logical categories.\footnote{Find the full function list at \link{https://support.google.com/docs/table/25273?hl=en}{https://support.google.com/docs/table/25273?hl=en}.}
+
+
+\emph{in progress}
+
+\subsection{Mathematical functions}
+
+Below is a selection of commonly used function. Their purpose should be apparent from the name. To me, the trickiest thing is remembering to use \code{AVERAGE} instead of trying \code{MEAN}, which doesn't exist. 
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+Function & Sample Usage & Documentation & Notes \\
+\midrule
+\code{SUM} & \code{SUM(A1:A10)} & \link{https://support.google.com/docs/answer/3093669}{link} & \\
+\code{AVERAGE} & \code{AVERAGE(A1:A10)} & \link{https://support.google.com/docs/answer/3093615?sjid=720707396607486715-NA}{link} & \\
+\code{MEDIAN} & \code{MEDIAN(A1:A10)} & \link{https://support.google.com/docs/answer/3094025}{link} & \\
+\code{STDEVP} & \code{STDEVP(A1:A10)} & \link{https://support.google.com/docs/answer/3094105}{link} & This is SD, per \cite{freedman2007statistics}. \\
+\code{STDEV} & \code{STDEV(A1:A10)} & \link{https://support.google.com/docs/answer/3094054?sjid=18107305809463122801-NA}{link} & This is SD$^{+}$, not SD, per \cite{freedman2007statistics}. \\
+\code{VAR} & \code{VAR(A1:A10)} & \link{https://support.google.com/docs/answer/3094063}{link} & This is SD${^{+}}^2$.\\
+\code{VARP} & \code{VARP(A1:A10)} & \link{https://support.google.com/docs/answer/3094113?sjid=18107305809463122801-NA}{link} & \\
+\code{CORREL} & \code{CORREL(A1:A10, B1:B10)} & \link{https://support.google.com/docs/answer/3093990?sjid=18107305809463122801-NA}{link} & Correlation, same as \code{PEARSON}. \\
+\code{COVAR} & \code{COVAR(A1:A10, B1:B10)} & \link{https://support.google.com/docs/answer/3093993?hl=en&sjid=18107305809463122801-NA}{link} & \\
+\bottomrule
+\end{tabular}
+
+\end{center}
+
+\subsection{Logical}
+
+
+\subsection{Lookup Functions}

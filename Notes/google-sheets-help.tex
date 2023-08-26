@@ -1,0 +1,59 @@
+\documentclass{article} % utf8,utf8x
+%\usepackage[utf8]{inputenc}
+
+\usepackage{tex/mystyle} 
+%\usepackage{customcolors}
+\usepackage{tex/Sheets/sheetscommands}
+\usepackage{pgf,tikz}
+\usetikzlibrary{automata, positioning}
+\usepackage{pas-tableur} % spreadsheet-like tables
+
+% overwrite hypersetup in myself to make links teal
+\hypersetup{
+    breaklinks=true,  % so long urls are correctly broken across lines
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=teal,
+    citecolor=citecolor,
+    }
+
+%\makeindex
+
+% Title
+\title{Intro Stats with Google Sheets}
+
+
+\author{\scalebox{1}{By: \link{https://github.com/alexanderthclark}{Alexander Clark}} \\
+ {\scalebox{0.8}{\centering\emph{Columbia University}}}
+ }
+\vspace{5cm}
+
+\date{%\vspace{1cm}\begin{center}
+%\end{center}
+%\vspace{1cm}
+\scalebox{.8}{This version: \today}
+}
+
+% name the list of listings 
+\renewcommand\lstlistlistingname{Code} 
+%\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\maketitle
+
+\section*{Preface}
+\input{tex/Sheets/preface}
+
+\tableofcontents
+
+\section{Basics}
+\input{tex/Sheets/basic.tex}
+
+\section{Functions}
+\input{tex/Sheets/functions.tex}
+
+\printbibliography
+\end{document}
+
+
