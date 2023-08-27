@@ -56,4 +56,33 @@ Function & Sample Usage & Notes \\
 \subsection{Logical}
 
 
+\begin{center}
+
+Logical Functions \\ 
+\begin{tabular}{rrr}
+\toprule
+Function & Syntax & Example \\
+\midrule
+\link{https://support.google.com/docs/answer/3093364}{\code{IF}} & \code{IF(logical_expression, value_if_true, value_if_false)} & \code{IF(A1 > 0, A1, 0)} \\ % IF
+\link{https://support.google.com/docs/answer/3093301}{\code{AND}} & \code{AND(logical_expression, [logical_expressions, ...])} & \code{AND(A1 > 0, A1 < 2)}  \\ % AND
+\link{https://support.google.com/docs/answer/3093306}{\code{OR}} & \code{OR(logical_expression, [logical_expressions, ...])} & \code{OR(A1 > 2, A1 < -2)} \\ % OR
+\link{https://support.google.com/docs/answer/3256529}{\code{AVERAGEIF}} & \code{AVERAGEIF(criteria_range, criterion, [average_range])} & \code{AVERAGEIF(A:A, ">0")}  \\ % AVERAGEIF
+\link{https://support.google.com/docs/answer/3093583}{\code{SUMIF}} & \code{SUMIF(criteria_range, criterion, [sum_range])} & \code{SUMIF(A:A, "taxi", B:B)} \\ % SUMIF
+
+\bottomrule
+\end{tabular}
+
+\end{center}
+
+
+
 \subsection{Lookup Functions}
+
+\begin{tabular}{rrr}
+\toprule
+Function & Syntax & Example \\
+\midrule
+\link{https://support.google.com/docs/answer/12405947}{\code{XLOOKUP}} & \code{XLOOKUP(search_key, lookup_range, range_result} \scalebox{0.5}{\code{, missing_value, match_mode, search_mode)}} & \code{XLOOKUP("Shaq", A:A, B:B)} \\ % IF
+
+\bottomrule
+\end{tabular}

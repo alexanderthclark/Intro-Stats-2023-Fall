@@ -30,7 +30,7 @@ Arithmetic can be done as you would expect, as long as you enter \code{=} and th
 
 
 
-\subsection{Cell References: \texttt{A1}, \texttt{A\$1}, and \texttt{\$A1}}
+\subsection{Cell References: \texttt{A1} and \texttt{Sheet1!A1}}
 
 You can reference the value of another cell using its column and row coordinate. For example, \code{A1} refers to the value in column A, row 1. 
 
@@ -46,6 +46,8 @@ You can reference the value of another cell using its column and row coordinate.
 \celtxt{B}{1}{4}
 \end{tikzpicture}
 \end{center}
+
+If you would like to reference the value in another sheet named \code{Sheet1} (another tab in the same workbook), you can do that with the syntax \code{=Sheet1!A1}. 
 
 
 \subsection{Cell Ranges: \texttt{A1:A2}, \texttt{A:A} and \texttt{A1:B2}}
