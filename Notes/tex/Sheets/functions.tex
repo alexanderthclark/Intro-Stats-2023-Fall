@@ -3,26 +3,53 @@ Google Sheets offers hundreds of functions across several categories. We are esp
 
 \emph{in progress}
 
-\subsection{Mathematical functions}
+\subsection{Mathematical and Statistical}
 
 Below is a selection of commonly used function. Their purpose should be apparent from the name. To me, the trickiest thing is remembering to use \code{AVERAGE} instead of trying \code{MEAN}, which doesn't exist. 
 
 \begin{center}
-\begin{tabular}{rrrr}
+
+Descriptive Statistics\\
+\begin{tabular}{rrr}
 \toprule
-Function & Sample Usage & Documentation & Notes \\
+Function & Sample Usage & Notes \\
 \midrule
-\code{SUM} & \code{SUM(A1:A10)} & \link{https://support.google.com/docs/answer/3093669}{link} & \\
-\code{AVERAGE} & \code{AVERAGE(A1:A10)} & \link{https://support.google.com/docs/answer/3093615?sjid=720707396607486715-NA}{link} & \\
-\code{MEDIAN} & \code{MEDIAN(A1:A10)} & \link{https://support.google.com/docs/answer/3094025}{link} & \\
-\code{STDEVP} & \code{STDEVP(A1:A10)} & \link{https://support.google.com/docs/answer/3094105}{link} & This is SD, per \cite{freedman2007statistics}. \\
-\code{STDEV} & \code{STDEV(A1:A10)} & \link{https://support.google.com/docs/answer/3094054?sjid=18107305809463122801-NA}{link} & This is SD$^{+}$, not SD, per \cite{freedman2007statistics}. \\
-\code{VAR} & \code{VAR(A1:A10)} & \link{https://support.google.com/docs/answer/3094063}{link} & This is SD${^{+}}^2$.\\
-\code{VARP} & \code{VARP(A1:A10)} & \link{https://support.google.com/docs/answer/3094113?sjid=18107305809463122801-NA}{link} & \\
-\code{CORREL} & \code{CORREL(A1:A10, B1:B10)} & \link{https://support.google.com/docs/answer/3093990?sjid=18107305809463122801-NA}{link} & Correlation, same as \code{PEARSON}. \\
-\code{COVAR} & \code{COVAR(A1:A10, B1:B10)} & \link{https://support.google.com/docs/answer/3093993?hl=en&sjid=18107305809463122801-NA}{link} & \\
+\link{https://support.google.com/docs/answer/3093615?sjid=720707396607486715-NA}{\code{AVERAGE}} & \code{AVERAGE(A1:A10)} & \\ % AVERAGE
+\link{https://support.google.com/docs/answer/3093990?sjid=18107305809463122801-NA}{\code{CORREL}} & \code{CORREL(A1:A10, B1:B10)} & Correlation, same as \code{PEARSON}. \\ % CORREL
+\link{https://support.google.com/docs/answer/3093993?hl=en&sjid=18107305809463122801-NA}{\code{COVAR}} & \code{COVAR(A1:A10, B1:B10)} & \\ % COVAR
+\link{https://support.google.com/docs/answer/3094025}{\code{MEDIAN}} & \code{MEDIAN(A1:A10)} & \\ % MEDIAN
+\link{https://support.google.com/docs/answer/3267350}{\code{PERCENTILE}} & \code{PERCENTILE(A1:A10, 0.5)} & \\ % PERCENTILE
+\link{https://support.google.com/docs/answer/3094063}{\code{VAR}} & \code{VAR(A1:A10)} & This is SD${^{+}}^2$.\\ % VAR
+\link{https://support.google.com/docs/answer/3094113?sjid=18107305809463122801-NA}{\code{VARP}} & \code{VARP(A1:A10)} & \\ % VARP
+\link{https://support.google.com/docs/answer/3093669}{\code{SUM}} & \code{SUM(A1:A10)} & \\ % SUM
+\link{https://support.google.com/docs/answer/3094054?sjid=18107305809463122801-NA}{\code{STDEV}} & \code{STDEV(A1:A10)} & This is SD$^{+}$, not SD, per \cite{freedman2007statistics}. \\ % STDEV
+\link{https://support.google.com/docs/answer/3094105}{\code{STDEVP}} & \code{STDEVP(A1:A10)} & This is SD, per \cite{freedman2007statistics}. \\ % STDEVP
 \bottomrule
 \end{tabular}
+\end{center}
+
+
+Next, we have some common probability distributions and the accompanying functions. You might also see the functions named differently, \code{NORM.DIST} instead of \code{NORMDIST} for example. Sometimes they are the same and sometimes they are slightly different. For example, \code{CHIDIST} calculates the right-tail probability and \code{CHISQ.DIST} calculates the left tail probability. The \code{cumulative} parameter should be set to \code{True} or \code{False}.
+
+\begin{center}
+
+Probability Distributions \\ 
+\begin{tabular}{rrr}
+\toprule
+Function & Sample Usage & Notes \\
+\midrule
+\link{https://support.google.com/docs/answer/3094021}{\code{NORMDIST}} & \code{NORMDIST(x, mean, std dev, cumulative)} & \\ % NORM.DIST
+\link{https://support.google.com/docs/answer/3093987}{\code{BINOMDIST}} & \code{BINOMDIST(num successes, trials, probability success, cumulative)} & \\ % BINOM.DIST
+\link{https://support.google.com/docs/answer/7003346}{\code{CHIDIST}} & \code{CHIDIST(x, degrees of freedom)} & right-tailed \\ % CHIDIST
+\link{https://support.google.com/docs/answer/7003347}{\code{CHISQ.DIST}} & \code{CHISQ.DIST(x, degrees of freedom, cumulative)} & left-tailed \\ % CHISQ.DIST
+\link{https://support.google.com/docs/answer/3295914}{\code{TDIST}} & \code{TDIST(x, degrees of freedom, tails)} & \\ % T.DIST
+\link{https://support.google.com/docs/answer/3094022}{\code{NORMINV}} & \code{NORMINV(probability, mean, std dev)} & \\ % NORMINV
+%\code{BINOM.INV} & \code{BINOM.INV(trials, probability success, alpha)} & \\ % BINOM.INV
+%\link{https://support.google.com/docs/answer/3094106}{\code{CHISQ.INV}} & \code{CHISQ.INV(probability, degrees of freedom)} & \\ % CHISQ.INV
+\link{https://support.google.com/docs/answer/6055811}{\code{TINV}} & \code{TINV(probability, degrees of freedom)} & Two-tailed inverse \\ % T.INV
+\bottomrule
+\end{tabular}
+
 
 \end{center}
 
