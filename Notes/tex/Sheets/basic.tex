@@ -58,7 +58,7 @@ You can select a range of cells with the mouse or by specifying a range of cell 
     \item Single column subset, \code{A1:A2}. This will select the cells in column A from row 1 to row 2.
     \item An entire column, \code{A:A}. This will select every cell in column A. 
     \item Rectangular selection, \code{A1:B2}, This will select \code{A1:A2} and \code{B1:B2}. Note, you can use \code{A1:C1} to select all cells in row 1 for columns A-C.
-    \item An entire row, \code{1:1}. This will select every row in row 1. 
+    \item An entire row, \code{1:1}. This will select the entirety of row 1. 
 \end{enumerate}
 
 Selecting a range of cells will be useful later when we use formulas. Note, if you use the reference \code{=A1:B2} by itself, as shown below, you will get back an error because the $2\times 2$ range cannot be inserted into a single cell.\footnote{Use the formula \code{=ARRAYFORMULA(A1:B2)} to copy the contents of \code{A1:B2} to \code{C1:D2}.}
