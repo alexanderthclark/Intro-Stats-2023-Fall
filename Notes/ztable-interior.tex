@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\begin{document}
+\begin{center}
+\section*{$z$-table (FPP style)}
+%\input{ztable-input.tex}
+\begin{tabular}{lllllllllll}
+\toprule
+ & +0.00 & +0.01 & +0.02 & +0.03 & +0.04 & +0.05 & +0.06 & +0.07 & +0.08 & +0.09 \\
+\midrule
+0.0 & \cellcolor{gray!20}0.0000 & \cellcolor{gray!20}0.0080 & \cellcolor{gray!20}0.0160 & \cellcolor{gray!20}0.0239 & \cellcolor{gray!20}0.0319 & \cellcolor{gray!20}0.0399 & \cellcolor{gray!20}0.0478 & \cellcolor{gray!20}0.0558 & \cellcolor{gray!20}0.0638 & \cellcolor{gray!20}0.0717 \\
+0.1 & 0.0797 & 0.0876 & 0.0955 & 0.1034 & 0.1113 & 0.1192 & 0.1271 & 0.1350 & 0.1428 & 0.1507 \\
+0.2 & \cellcolor{gray!20}0.1585 & \cellcolor{gray!20}0.1663 & \cellcolor{gray!20}0.1741 & \cellcolor{gray!20}0.1819 & \cellcolor{gray!20}0.1897 & \cellcolor{gray!20}0.1974 & \cellcolor{gray!20}0.2051 & \cellcolor{gray!20}0.2128 & \cellcolor{gray!20}0.2205 & \cellcolor{gray!20}0.2282 \\
+0.3 & 0.2358 & 0.2434 & 0.2510 & 0.2586 & 0.2661 & 0.2737 & 0.2812 & 0.2886 & 0.2961 & 0.3035 \\
+0.4 & \cellcolor{gray!20}0.3108 & \cellcolor{gray!20}0.3182 & \cellcolor{gray!20}0.3255 & \cellcolor{gray!20}0.3328 & \cellcolor{gray!20}0.3401 & \cellcolor{gray!20}0.3473 & \cellcolor{gray!20}0.3545 & \cellcolor{gray!20}0.3616 & \cellcolor{gray!20}0.3688 & \cellcolor{gray!20}0.3759 \\
+0.5 & 0.3829 & 0.3899 & 0.3969 & 0.4039 & 0.4108 & 0.4177 & 0.4245 & 0.4313 & 0.4381 & 0.4448 \\
+0.6 & \cellcolor{gray!20}0.4515 & \cellcolor{gray!20}0.4581 & \cellcolor{gray!20}0.4647 & \cellcolor{gray!20}0.4713 & \cellcolor{gray!20}0.4778 & \cellcolor{gray!20}0.4843 & \cellcolor{gray!20}0.4907 & \cellcolor{gray!20}0.4971 & \cellcolor{gray!20}0.5035 & \cellcolor{gray!20}0.5098 \\
+0.7 & 0.5161 & 0.5223 & 0.5285 & 0.5346 & 0.5407 & 0.5467 & 0.5527 & 0.5587 & 0.5646 & 0.5705 \\
+0.8 & \cellcolor{gray!20}0.5763 & \cellcolor{gray!20}0.5821 & \cellcolor{gray!20}0.5878 & \cellcolor{gray!20}0.5935 & \cellcolor{gray!20}0.5991 & \cellcolor{gray!20}0.6047 & \cellcolor{gray!20}0.6102 & \cellcolor{gray!20}0.6157 & \cellcolor{gray!20}0.6211 & \cellcolor{gray!20}0.6265 \\
+0.9 & 0.6319 & 0.6372 & 0.6424 & 0.6476 & 0.6528 & 0.6579 & 0.6629 & 0.6680 & 0.6729 & 0.6778 \\
+1.0 & \cellcolor{gray!20}0.6827 & \cellcolor{gray!20}0.6875 & \cellcolor{gray!20}0.6923 & \cellcolor{gray!20}0.6970 & \cellcolor{gray!20}0.7017 & \cellcolor{gray!20}0.7063 & \cellcolor{gray!20}0.7109 & \cellcolor{gray!20}0.7154 & \cellcolor{gray!20}0.7199 & \cellcolor{gray!20}0.7243 \\
+1.1 & 0.7287 & 0.7330 & 0.7373 & 0.7415 & 0.7457 & 0.7499 & 0.7540 & 0.7580 & 0.7620 & 0.7660 \\
+1.2 & \cellcolor{gray!20}0.7699 & \cellcolor{gray!20}0.7737 & \cellcolor{gray!20}0.7775 & \cellcolor{gray!20}0.7813 & \cellcolor{gray!20}0.7850 & \cellcolor{gray!20}0.7887 & \cellcolor{gray!20}0.7923 & \cellcolor{gray!20}0.7959 & \cellcolor{gray!20}0.7995 & \cellcolor{gray!20}0.8029 \\
+1.3 & 0.8064 & 0.8098 & 0.8132 & 0.8165 & 0.8198 & 0.8230 & 0.8262 & 0.8293 & 0.8324 & 0.8355 \\
+1.4 & \cellcolor{gray!20}0.8385 & \cellcolor{gray!20}0.8415 & \cellcolor{gray!20}0.8444 & \cellcolor{gray!20}0.8473 & \cellcolor{gray!20}0.8501 & \cellcolor{gray!20}0.8529 & \cellcolor{gray!20}0.8557 & \cellcolor{gray!20}0.8584 & \cellcolor{gray!20}0.8611 & \cellcolor{gray!20}0.8638 \\
+1.5 & 0.8664 & 0.8690 & 0.8715 & 0.8740 & 0.8764 & 0.8789 & 0.8812 & 0.8836 & 0.8859 & 0.8882 \\
+1.6 & \cellcolor{gray!20}0.8904 & \cellcolor{gray!20}0.8926 & \cellcolor{gray!20}0.8948 & \cellcolor{gray!20}0.8969 & \cellcolor{gray!20}0.8990 & \cellcolor{gray!20}0.9011 & \cellcolor{gray!20}0.9031 & \cellcolor{gray!20}0.9051 & \cellcolor{gray!20}0.9070 & \cellcolor{gray!20}0.9090 \\
+1.7 & 0.9109 & 0.9127 & 0.9146 & 0.9164 & 0.9181 & 0.9199 & 0.9216 & 0.9233 & 0.9249 & 0.9265 \\
+1.8 & \cellcolor{gray!20}0.9281 & \cellcolor{gray!20}0.9297 & \cellcolor{gray!20}0.9312 & \cellcolor{gray!20}0.9328 & \cellcolor{gray!20}0.9342 & \cellcolor{gray!20}0.9357 & \cellcolor{gray!20}0.9371 & \cellcolor{gray!20}0.9385 & \cellcolor{gray!20}0.9399 & \cellcolor{gray!20}0.9412 \\
+1.9 & 0.9426 & 0.9439 & 0.9451 & 0.9464 & 0.9476 & 0.9488 & 0.9500 & 0.9512 & 0.9523 & 0.9534 \\
+2.0 & \cellcolor{gray!20}0.9545 & \cellcolor{gray!20}0.9556 & \cellcolor{gray!20}0.9566 & \cellcolor{gray!20}0.9576 & \cellcolor{gray!20}0.9586 & \cellcolor{gray!20}0.9596 & \cellcolor{gray!20}0.9606 & \cellcolor{gray!20}0.9615 & \cellcolor{gray!20}0.9625 & \cellcolor{gray!20}0.9634 \\
+2.1 & 0.9643 & 0.9651 & 0.9660 & 0.9668 & 0.9676 & 0.9684 & 0.9692 & 0.9700 & 0.9707 & 0.9715 \\
+2.2 & \cellcolor{gray!20}0.9722 & \cellcolor{gray!20}0.9729 & \cellcolor{gray!20}0.9736 & \cellcolor{gray!20}0.9743 & \cellcolor{gray!20}0.9749 & \cellcolor{gray!20}0.9756 & \cellcolor{gray!20}0.9762 & \cellcolor{gray!20}0.9768 & \cellcolor{gray!20}0.9774 & \cellcolor{gray!20}0.9780 \\
+2.3 & 0.9786 & 0.9791 & 0.9797 & 0.9802 & 0.9807 & 0.9812 & 0.9817 & 0.9822 & 0.9827 & 0.9832 \\
+2.4 & \cellcolor{gray!20}0.9836 & \cellcolor{gray!20}0.9840 & \cellcolor{gray!20}0.9845 & \cellcolor{gray!20}0.9849 & \cellcolor{gray!20}0.9853 & \cellcolor{gray!20}0.9857 & \cellcolor{gray!20}0.9861 & \cellcolor{gray!20}0.9865 & \cellcolor{gray!20}0.9869 & \cellcolor{gray!20}0.9872 \\
+2.5 & 0.9876 & 0.9879 & 0.9883 & 0.9886 & 0.9889 & 0.9892 & 0.9895 & 0.9898 & 0.9901 & 0.9904 \\
+2.6 & \cellcolor{gray!20}0.9907 & \cellcolor{gray!20}0.9909 & \cellcolor{gray!20}0.9912 & \cellcolor{gray!20}0.9915 & \cellcolor{gray!20}0.9917 & \cellcolor{gray!20}0.9920 & \cellcolor{gray!20}0.9922 & \cellcolor{gray!20}0.9924 & \cellcolor{gray!20}0.9926 & \cellcolor{gray!20}0.9929 \\
+2.7 & 0.9931 & 0.9933 & 0.9935 & 0.9937 & 0.9939 & 0.9940 & 0.9942 & 0.9944 & 0.9946 & 0.9947 \\
+2.8 & \cellcolor{gray!20}0.9949 & \cellcolor{gray!20}0.9950 & \cellcolor{gray!20}0.9952 & \cellcolor{gray!20}0.9953 & \cellcolor{gray!20}0.9955 & \cellcolor{gray!20}0.9956 & \cellcolor{gray!20}0.9958 & \cellcolor{gray!20}0.9959 & \cellcolor{gray!20}0.9960 & \cellcolor{gray!20}0.9961 \\
+2.9 & 0.9963 & 0.9964 & 0.9965 & 0.9966 & 0.9967 & 0.9968 & 0.9969 & 0.9970 & 0.9971 & 0.9972 \\
+3.0 & \cellcolor{gray!20}0.9973 & \cellcolor{gray!20}0.9974 & \cellcolor{gray!20}0.9975 & \cellcolor{gray!20}0.9976 & \cellcolor{gray!20}0.9976 & \cellcolor{gray!20}0.9977 & \cellcolor{gray!20}0.9978 & \cellcolor{gray!20}0.9979 & \cellcolor{gray!20}0.9979 & \cellcolor{gray!20}0.9980 \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[
+        no markers, 
+        domain=-3:3, 
+        samples=100,
+        axis lines=left,
+        height=6cm, width=10cm,
+        xtick={-1, 1},
+        xticklabels={$-1$, $z=1$},
+        ytick=\empty,
+        x axis line style={-},
+        y axis line style={-},
+        axis y line=none, % Remove the left y-axis spine
+        xlabel near ticks,
+        ylabel near ticks,
+        ymin=0,
+        ymax = 0.43
+    ]
+    
+    \addplot [fill=blue!30, draw=none, domain=-1:1] {1/sqrt(2*pi)*exp(-x^2/2)} \closedcycle;
+    \addplot [thick] {1/sqrt(2*pi)*exp(-x^2/2)};
+    
+    \node at (axis cs:0,0.2) {$0.6827$};
+        
+    \end{axis}
+\end{tikzpicture}
+
+\end{center}
+\end{document}
