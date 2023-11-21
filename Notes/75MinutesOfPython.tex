@@ -46,6 +46,18 @@ Namespaces are one honking great idea---let's do more of those!
 
 Python can seem endlessly complex. \link{https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/}{\emph{Fluent Python}} is 1,012 pages. Luckily, we don't need to aspire to fluency. Let's learn just enough of the language to order off the kids' menu. 
 
+\section{Can't ChatGPT do all of this for me?}
+
+Yes, you should use ChatGPT! ChatGPT and other AI tools write pretty good code. But you have the luxury of spending four years in college and I would suggest that beginners force themselves to write their own first draft. ChatGPT still hallucinates, so you can't yet depend on ChatGPT to do everything.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.38\textwidth]{figures/chatgptwrong}
+\caption{Misinformation spreading on the internets.}
+\label{fig:your_label}
+\end{figure}
+
+
 
 \section{Python as a Calculator}
 
@@ -224,15 +236,37 @@ Individual columns can be accessed as a \emph{Series} with \code{df['frosty_expe
 
 \pyfile{pd-methods.py}
 
+
+\section{A Two-Sample $t$-Test}
+
+\pyfile{two-samp-t.py}
+
+\section{A $\chi^2$-Test}
+
+We'll use the \code{marital_status_party_affiliation.csv} file to conduct a test of independence for the variables \emph{marital status} and \emph{political party affiliation}. It's generally known that married people lean Republican and that single people lean Democrat. With our dummy data, we'll see if we have enough evidence to reject the possibility of this being only noise. 
+
+\pyfile{pd-ctab.py}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.66\textwidth]{figures/pd-crosstab}
+\caption{A \link{https://pandas.pydata.org/docs/reference/api/pandas.crosstab.html}{crosstab} as displayed in Google Colab.}
+\label{fig:your_label}
+\end{figure}
+
+With the crosstab, we have everything we need for a test of independence. The SciPy library offers the appropriate functions. 
+
+\pyfile{chi2.py}
+
 \section{Further Resources and Caution}
 
 \subsection{Resources}
 
-I got my start with \link{https://www.datacamp.com/}{DataCamp} courses. DataCamp uses a subscription model that is affordable. There are also many excellent, free resources available that will help you learn Python. \link{https://wesmckinney.com/book/}{\emph{Python for Data Analysis}} by Wes McKinney was updated in 2022, making it one of the most current resources. I also recommend Jake VanderPlas's \link{https://jakevdp.github.io/WhirlwindTourOfPython/}{\emph{Whirlwind Tour of Python}} and \link{https://jakevdp.github.io/PythonDataScienceHandbook/}{\emph{Python Data Science Handbook}}. For plotting with matplotlib, try \link{https://github.com/alexanderthclark/Matplotlib-for-Storytellers}{my book}. 
+I got my start with \link{https://www.datacamp.com/}{DataCamp} courses. DataCamp uses a subscription model that is affordable. You can have ChatGPT quiz you. There are also many excellent, free resources available that will help you learn Python. \link{https://wesmckinney.com/book/}{\emph{Python for Data Analysis}} by Wes McKinney was updated in 2022, making it one of the most current resources. I also recommend Jake VanderPlas's \link{https://jakevdp.github.io/WhirlwindTourOfPython/}{\emph{Whirlwind Tour of Python}} and \link{https://jakevdp.github.io/PythonDataScienceHandbook/}{\emph{Python Data Science Handbook}}. For plotting with matplotlib, try \link{https://github.com/alexanderthclark/Matplotlib-for-Storytellers}{my book}. 
 
 \subsection{Caution}
 
-Recall when we calculated sample variance as $\sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}$. We used $n-1$ instead of $n$ in the denominator as correction for unbiasedness. Not all Python libraries do this by default! NumPy is one such library that does not use the correction by default. The lesson here is that, for this class, do your research if you are using other libraries and functions. There are many ways to do what sounds like the same thing in statistics and some disjointedness across all of the Python libraries. 
+Recall when we calculated sample variance as $\sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}$ and sample standard deviation as the square root of this quantity. We used $n-1$ instead of $n$ in the denominator as correction for unbiasedness. Not all Python libraries do this by default! NumPy is one such library that does not use the correction by default. The lesson here is that, for this class, do your research if you are using other libraries and functions. There are many ways to do what sounds like the same thing in statistics and some disjointedness across all of the Python libraries. 
 
 Below is another example where default behavior in the StatsModels library does not match our intro conventions. For now, our calculations are simple enough that I don't recommend finding random libraries and functions to shorten your code. 
 
